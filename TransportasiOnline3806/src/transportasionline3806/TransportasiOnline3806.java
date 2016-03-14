@@ -101,4 +101,54 @@ public class Pesanan{
 
 }
   
+ /**
+  * TAMBAHAN BELUM ADA CREATEKURIR
+  * ??
+  * */
+  
+  public class Pelanggan extends Orang{
+	private Pesanan[] pesanan;
+	private long idPelanggan;
+	private String alamat;
+	private int list=0;
+	private int y;
+
+	public Pelanggan(String nama,String notelp,long idPelanggan,String alamat,int x){
+		super(nama,notelp);
+		this.alamat=alamat;
+		this.idPelanggan=idPelanggan;
+		y=x;
+		pesanan = new Pesanan[x]; 
+	} 
+
+	public void createPesanan(Pesanan pesan){
+		if (list<y){
+			this.pesanan[list]=pesan;
+			list++;
+		}
+		else
+		{
+			System.out.println("Pesanan Full");
+		}
+	}
+
+	//public void createPesananKurir(Kurir kurir){
+		
+	//}
+	public void setIdPelanggan(long idPelanggan){
+		this.idPelanggan=idPelanggan;
+	}
+
+	public long getIdPelanggan(){
+		return idPelanggan; 
+	}
+
+	public void setAlamat(String alamat){
+		this.alamat=alamat;
+	}
+
+	public String getAlamat(){
+		return alamat;
+	}
+}
 
